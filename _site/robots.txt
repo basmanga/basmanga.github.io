@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://basmanga.netlify.app/sitemap.xml
