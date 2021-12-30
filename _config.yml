@@ -1,53 +1,69 @@
-
-# in the templates via {{ site.myvariable }}.
-
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
-
-# Build settings
-
-include: ["_pages"] 
-
-plugins:
-  - jekyll-paginate
-  - jekyll-feed
-  - jekyll-seo-tag  
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: /:categories-:title/
-paginate: 12
-paginate_path: "/page/:num/"
-svg_color: "#ff0a16"
+---
+title: Best3abjad
+timezone: UTC
 collections:
-  authors:
+  posts:
+    title: Posts
     output: true
+  products:
+    title: Products
+    output: true
+    permalink: "/donate/:path/"
+  uploads:
+    title: Uploads
+    output: false
+  
+  
+  documen-plugin:
+    title: genre
+    output: true
+    permalink: "/genre/:path/"  
+  
+defaults:
+- scope:
+    path: ''
+    type: pages
+  values:
+    layout: page
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+
+ 
+- scope:
+    path: ''
+    type: genre
+  values:
+    layout: genre    
+
     
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-exclude:
-   - .sass-cache/
-   - .jekyll-cache/
-   - gemfiles/
-   - Gemfile
-   - Gemfile.lock
-   - node_modules/
-   - vendor/bundle/
-   - vendor/cache/
-   - vendor/gems/
-   - vendor/ruby/
+
+
+description: Membahas seputar tehnik blogging untuk meraih artikel menjadi page one
+url: https://basmanga.github.io
+permalink: "/:title/"
+facebook_url: https://www.facebook.com/Peneliti-Online-130856032222822
+twitter_url: https://twitter.com/
+linkedin_url: https://www.linkedin.com/in/
+pinterest_url: 
+instagram_url: 
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+input_types:
+- text
+- textarea
+- email
+- date
+- checkbox
+- radio
+- number
+- submit
+form_engines:
+- cloudcannon
+- formspree
+- formbucket
